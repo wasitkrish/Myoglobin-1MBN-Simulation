@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Virtual environments
+Python Archive/
+*/.venv/
+
+# GROMACS outputs
+*.xtc
+*.trr
+*.edr
+*.log
+*.cpt
+*.tng
+
+# Large structures
+*md.gro
+*npt.gro
+*nvt.gro
+
+# Backup temp files
+#*#
+
+# OS junk
+.DS_Store
+Thumbs.db
