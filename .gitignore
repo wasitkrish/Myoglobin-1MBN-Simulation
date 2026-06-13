@@ -37,10 +37,6 @@ Simulation/dataset/dataset-metadata.json
 Simulation/scripts/release_audit.sh
 Simulation/release_audit/
 
-# Exported dataset files for Kaggle or local analysis
-Datasets/*.csv
-Datasets/*.xlsx
-
 # OS junk
 .DS_Store
 Thumbs.db
