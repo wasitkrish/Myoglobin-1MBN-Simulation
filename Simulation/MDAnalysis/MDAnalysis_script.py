@@ -2,13 +2,15 @@ import MDAnalysis as mda
 from MDAnalysis.analysis import rms, align
 from MDAnalysis.analysis.rms import RMSF
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 # =====================================
 # 1. Load Files
 # =====================================
 
-topology = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/md.gro"
-trajectory = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/md.xtc"
+project_root = Path(__file__).resolve().parents[1]
+topology = project_root / "files" / "md.gro"
+trajectory = project_root / "files" / "md.xtc"
 
 u = mda.Universe(topology, trajectory)
 protein = u.select_atoms("protein")
@@ -38,7 +40,7 @@ plt.plot(rmsd[:,1], rmsd[:,2])
 plt.xlabel("Time (ps)")
 plt.ylabel("RMSD (Å)")
 plt.title("Backbone RMSD")
-plt.savefig("/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/MD Analysis/Output/RMSD.png")
+plt.savefig(project_root / "MDAnalysis" / "Output" / "RMSD.png")
 plt.close()
 
 # =====================================
@@ -53,7 +55,7 @@ plt.plot(backbone.resids, rmsf.results.rmsf)
 plt.xlabel("Residue ID")
 plt.ylabel("RMSF (Å)")
 plt.title("Backbone RMSF")
-plt.savefig("/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/MD Analysis/Output/RMSF.png")
+plt.savefig(project_root / "MDAnalysis" / "Output" / "RMSF.png")
 plt.close()
 
 # =====================================
@@ -73,5 +75,5 @@ plt.plot(time, rg)
 plt.xlabel("Time (ps)")
 plt.ylabel("Radius of Gyration (Å)")
 plt.title("Radius of Gyration")
-plt.savefig("/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/MD Analysis/Output/Radius_of_Gyration.png")
+plt.savefig(project_root / "MDAnalysis" / "Output" / "Radius_of_Gyration.png")
 plt.close()

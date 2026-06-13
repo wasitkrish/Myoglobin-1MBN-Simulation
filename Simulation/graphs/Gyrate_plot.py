@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from pathlib import Path
 
 def read_xvg(filename):
     data = []
@@ -42,7 +43,7 @@ def read_xvg(filename):
 
 # ===== Main Program =====
 
-filename = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/gyrate.xvg"
+filename = Path(__file__).resolve().parents[1] / "files" / "gyrate.xvg"
 
 data, title, xlabel, ylabel, legends = read_xvg(filename)
 
@@ -74,12 +75,12 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout(rect=[0, 0, 0.85, 1])
 
 # ===== Save Plot =====
-output_folder = "plots"
+output_folder = Path(__file__).resolve().parent / "plots"
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-output_path ="/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/graphs/plots/gyrate_multi.png"
+output_path = output_folder / "gyrate_multi.png"
 plt.savefig(output_path, dpi=300)
 
 print(f"Plot saved at: {output_path}")

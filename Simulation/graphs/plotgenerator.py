@@ -1,15 +1,16 @@
 import os
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 
 # ===== Get script directory =====
-script_dir = os.path.dirname(os.path.abspath(__file__))
+script_dir = Path(__file__).resolve().parent
 
 # ===== Input directory (parent folder of graphs/) =====
-xvg_dir = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/files"
+xvg_dir = script_dir.parent / "files"
 
 # ===== Output directory (same as previous programs) =====
-output_dir = os.path.join(script_dir, "plots")
+output_dir = script_dir / "plots"
 os.makedirs(output_dir, exist_ok=True)
 
 print("Reading XVG files from:", xvg_dir)
@@ -38,7 +39,7 @@ def read_xvg(file_path):
 
 # ===== Plot each XVG file =====
 for file in xvg_files:
-    file_path = os.path.join(xvg_dir, file)
+    file_path = os.path.join(str(xvg_dir), file)
     x, y = read_xvg(file_path)
 
     if not x:
@@ -53,7 +54,7 @@ for file in xvg_files:
 
     plt.tight_layout()
 
-    save_path = os.path.join(output_dir, f"{os.path.splitext(file)[0]}.png")
+    save_path = os.path.join(str(output_dir), f"{os.path.splitext(file)[0]}.png")
     plt.savefig(save_path, dpi=300)
     plt.close()
 

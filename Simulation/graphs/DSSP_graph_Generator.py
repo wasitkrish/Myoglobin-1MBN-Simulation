@@ -1,8 +1,9 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-file_path = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/dssp_num.xvg"
+file_path = Path(__file__).resolve().parents[1] / "files" / "dssp_num.xvg"
 
 time = []
 data = []
@@ -61,12 +62,12 @@ plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.tight_layout(rect=[0, 0, 0.85, 1])
 
 # -------- Save Plot --------
-output_folder = "plots"
+output_folder = Path(__file__).resolve().parent / "plots"
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-output_path = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN notebook/graphs/plots/DSSP.png"
+output_path = output_folder / "DSSP.png"
 plt.savefig(output_path, dpi=300)
 
 print(f"\nPlot saved at: {output_path}")

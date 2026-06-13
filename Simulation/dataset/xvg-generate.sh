@@ -1,7 +1,10 @@
 #!/bin/bash
 
-BASE="/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/files"
-OUT="/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/dataset/xvgdata"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+BASE="$PROJECT_ROOT/files"
+OUT="$PROJECT_ROOT/dataset/xvgdata"
 
 TPR="$BASE/md.tpr"
 XTC="$BASE/md.xtc"

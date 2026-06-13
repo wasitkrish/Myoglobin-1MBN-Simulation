@@ -4,8 +4,9 @@ import os
 from pathlib import Path
 
 # ---------- SETTINGS ----------
-input_folder = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/dataset/xvgdata/"
-output_folder = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/dataset/output"
+script_dir = Path(__file__).resolve().parent
+input_folder = script_dir / "xvgdata"
+output_folder = script_dir / "output"
 output_name = "myoglobin_simulation_data.xlsx"
 TARGET_DT = 10  # ps
 # ------------------------------
@@ -79,7 +80,7 @@ dataset = dataset.sort_values("time").interpolate(limit_direction="both")
 dataset = dataset.reset_index(drop=True)
 
 # Save files
-output_file = os.path.join(output_folder, output_name)
+output_file = os.path.join(str(output_folder), output_name)
 dataset.to_excel(output_file, index=False)
 dataset.to_csv(output_file.replace(".xlsx", ".csv"), index=False)
 

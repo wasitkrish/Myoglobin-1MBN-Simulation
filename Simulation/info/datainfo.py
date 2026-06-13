@@ -4,6 +4,7 @@ import MDAnalysis as mda
 import matplotlib.pyplot as plt
 import os
 import re
+from pathlib import Path
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib import colors
@@ -14,24 +15,25 @@ from reportlab.lib.pagesizes import A4
 # PATHS
 # ============================================
 
-base = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/files/"
-output_dir = "/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/info/data/"
+project_root = Path(__file__).resolve().parents[1]
+base = project_root / "files"
+output_dir = project_root / "info" / "data"
 os.makedirs(output_dir, exist_ok=True)
 
-structure_file = os.path.join(base, "md.gro")
+structure_file = str(base / "md.gro")
 
 xvg_files = {
-    "RMSD": (os.path.join(base, "rmsd.xvg"), "nm"),
-    "RMSF": (os.path.join(base, "rmsf.xvg"), "nm"),
-    "Radius of Gyration": (os.path.join(base, "gyrate.xvg"), "nm"),
-    "Hydrogen Bonds": (os.path.join(base, "hbnum.xvg"), "count"),
-    "Pressure": (os.path.join(base, "pressure.xvg"), "bar"),
-    "Temperature": (os.path.join(base, "temperature.xvg"), "K"),
-    "Potential Energy": (os.path.join(base, "potential.xvg"), "kJ/mol"),
-    "Kinetic Energy": (os.path.join(base, "kinetic_energy.xvg"), "kJ/mol"),
-    "Total Energy": (os.path.join(base, "total_energy.xvg"), "kJ/mol"),
-    "SASA": (os.path.join(base, "sasa.xvg"), "nm^2"),
-    "Density": (os.path.join(base, "density.xvg"), "kg/m^3")
+    "RMSD": (str(base / "rmsd.xvg"), "nm"),
+    "RMSF": (str(base / "rmsf.xvg"), "nm"),
+    "Radius of Gyration": (str(base / "gyrate.xvg"), "nm"),
+    "Hydrogen Bonds": (str(base / "hbnum.xvg"), "count"),
+    "Pressure": (str(base / "pressure.xvg"), "bar"),
+    "Temperature": (str(base / "temperature.xvg"), "K"),
+    "Potential Energy": (str(base / "potential.xvg"), "kJ/mol"),
+    "Kinetic Energy": (str(base / "kinetic_energy.xvg"), "kJ/mol"),
+    "Total Energy": (str(base / "total_energy.xvg"), "kJ/mol"),
+    "SASA": (str(base / "sasa.xvg"), "nm^2"),
+    "Density": (str(base / "density.xvg"), "kg/m^3")
 }
 
 print("\n========== MD SIMULATION REPORT ==========\n")
@@ -105,7 +107,7 @@ for label, (file, unit) in xvg_files.items():
     plt.ylabel(f"{label} ({unit})")
     plt.title(f"{label} ({unit})")
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, safe_filename(label) + ".png"), dpi=300)
+    plt.savefig(os.path.join(str(output_dir), safe_filename(label) + ".png"), dpi=300)
     plt.close()
 
 # ============================================
@@ -123,7 +125,7 @@ report = {
 
 report.update(results)
 
-csv_path = os.path.join(output_dir, "MD_Report.csv")
+csv_path = os.path.join(str(output_dir), "MD_Report.csv")
 pd.DataFrame(report.items(), columns=["Property", "Value"]).to_csv(csv_path, index=False)
 
 print("\nCSV saved at:", csv_path)
@@ -132,7 +134,7 @@ print("\nCSV saved at:", csv_path)
 # SAVE FORMATTED PDF
 # ============================================
 
-pdf_path = os.path.join(output_dir, "MD_Report.pdf")
+pdf_path = os.path.join(str(output_dir), "MD_Report.pdf")
 
 doc = SimpleDocTemplate(
     pdf_path,
