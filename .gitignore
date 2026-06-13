@@ -36,6 +36,7 @@ Simulation/requirements.txt
 Simulation/dataset/dataset-metadata.json
 Simulation/scripts/release_audit.sh
 Simulation/release_audit/
+kaggle_dataset_staging/
 
 # OS junk
 .DS_Store
