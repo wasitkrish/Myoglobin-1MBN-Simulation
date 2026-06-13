@@ -1,43 +1,56 @@
-<!-- Banner Header -->
+# Myoglobin 1MBN Molecular Dynamics
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1B2735,100:090A0F&height=220&section=header&text=Myoglobin%201MBN%20Molecular%20Dynamics&fontSize=34&fontColor=ffffff&animation=fadeIn" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F19,50:1B2735,100:2C5364&height=220&section=header&text=Myoglobin%20(1MBN)%20Molecular%20Dynamics&fontSize=34&fontColor=ffffff&animation=fadeIn" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Simulation-GROMACS-blue.svg?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Protein-Myoglobin%20(1MBN)-red.svg?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Field-Molecular%20Dynamics-green.svg?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Analysis-MDAnalysis-orange.svg?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GROMACS-Molecular%20Dynamics-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Protein-Myoglobin%20(1MBN)-red?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Analysis-MDAnalysis-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-Scientific%20Computing-green?style=for-the-badge" />
 </p>
 
 <p align="center">
-  <b>Reproducible Molecular Dynamics Simulation and Analysis of Myoglobin (PDB: 1MBN)</b>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=36BCF7&center=true&vCenter=true&width=850&lines=Reproducible+Molecular+Dynamics+Simulation;Protein+Dynamics+Analysis+of+Myoglobin+(1MBN);GROMACS+%7C+MDAnalysis+%7C+Scientific+Computing;Publication-Ready+Figures+and+Datasets" />
+</p>
+
+<p align="center">
+  <b>A complete molecular dynamics workflow for investigating structural stability, conformational behavior, and thermodynamic properties of Myoglobin (PDB: 1MBN).</b>
+</p>
+
+<p align="center">
+  <b>Kaggle Link for trajectory files:</b>
+  <br />
+  <a href="https://www.kaggle.com/datasets/wasitkrish/myoglobin-1mbn-md-simulation">https://www.kaggle.com/datasets/wasitkrish/myoglobin-1mbn-md-simulation</a>
+</p>
+
+<p align="center">
+  <em>Large trajectory files and heavyweight MD outputs are hosted on Kaggle so GitHub remains focused on the reproducible workflow, analysis scripts, and lightweight results.</em>
 </p>
 
 ---
 
-## 🧬 Project Overview
+# 🧬 Project Overview
 
-This repository contains a complete **Molecular Dynamics (MD) simulation workflow**
-for the oxygen-binding protein **Myoglobin (PDB ID: 1MBN)** using **GROMACS** and
-Python-based post-processing tools.
+This repository presents a fully reproducible **Molecular Dynamics (MD) simulation and analysis workflow** for **Myoglobin (PDB ID: 1MBN)** using **GROMACS**, **MDAnalysis**, and the Python scientific computing ecosystem.
 
-The project includes:
+The project demonstrates an end-to-end computational biophysics pipeline covering:
 
-* Simulation parameter files
-* Trajectory analysis workflows
-* Automated XVG extraction pipelines
-* Statistical summaries
-* Publication-quality visualizations
-* Lightweight datasets for GitHub
-* Kaggle-hosted large trajectory data
+* System preparation
+* Energy minimization
+* Equilibration
+* Production molecular dynamics
+* Trajectory processing
+* Structural analysis
+* Statistical reporting
+* Scientific visualization
 
-The repository is designed to be **fully reproducible, research-oriented, and GitHub friendly**, while maintaining compatibility with large-scale datasets hosted externally.
+The repository is designed to provide a transparent and reproducible framework for studying protein dynamics while maintaining a lightweight GitHub footprint through external storage of large trajectory files.
 
 ---
 
-## 📊 Featured Results
+# 📊 Featured Results
 
 <p align="center">
   <img src="Simulation/graphs/plots/rmsd.png" alt="RMSD" width="30%" />
@@ -46,154 +59,190 @@ The repository is designed to be **fully reproducible, research-oriented, and Gi
 </p>
 
 <p align="center">
-  Structural Stability • Compactness • Solvent Accessibility
+  <i>Structural Stability • Compactness • Solvent Accessibility</i>
 </p>
 
 ---
 
-## 🎓 Research Context
+# 🔍 Scientific Highlights
 
-Molecular Dynamics simulations provide atomistic insights into protein behavior
-under physiological conditions.
+The simulation workflow evaluates multiple indicators of protein stability and conformational behavior:
 
-This project investigates:
+✅ Structural deviation through RMSD analysis
 
-* Structural stability of myoglobin
-* Conformational fluctuations
-* Protein compactness
-* Solvent exposure characteristics
-* Secondary structure evolution
-* Energetic behavior throughout simulation
+✅ Residue-level flexibility through RMSF analysis
 
-The workflow demonstrates the application of computational biophysics techniques
-for protein dynamics analysis and serves as a practical reference for students,
-researchers, and molecular simulation enthusiasts.
+✅ Protein compactness using Radius of Gyration
+
+✅ Solvent exposure through SASA calculations
+
+✅ Secondary structure preservation via DSSP
+
+✅ Thermodynamic stability through temperature, pressure, and energy monitoring
+
+✅ Independent validation using MDAnalysis-based trajectory processing
+
+Together, these analyses provide a comprehensive view of the dynamic behavior of Myoglobin throughout the simulation trajectory.
 
 ---
 
-## 🔬 Scientific Workflow
+# 📈 Key Findings
+
+Analysis of the generated trajectories indicates:
+
+* Stable structural behavior throughout the production simulation
+* Consistent radius of gyration suggesting preservation of overall protein compactness
+* Maintained secondary structural elements across the trajectory
+* Localized flexibility concentrated in specific residue regions
+* Stable thermodynamic properties during simulation
+* No evidence of major unfolding or catastrophic structural instability
+
+These observations suggest that the simulated Myoglobin structure remained close to its native folded state under the selected simulation conditions.
+
+---
+
+# ⚙️ Simulation Workflow
 
 ```mermaid
 flowchart LR
-    A[Simulation Inputs] --> B[GROMACS Simulation]
-    B --> C[Trajectory Generation]
-    C --> D[XVG Extraction]
-    D --> E[Data Processing]
-    E --> F[Visualization]
-    F --> G[Scientific Reporting]
 
-    C --> H[Kaggle Dataset Archive]
+A[Protein Structure<br>1MBN] --> B[System Preparation]
+
+B --> C[Energy Minimization]
+
+C --> D[NVT Equilibration]
+
+D --> E[NPT Equilibration]
+
+E --> F[Production MD]
+
+F --> G[Trajectory Processing]
+
+G --> H[RMSD]
+
+G --> I[RMSF]
+
+G --> J[Radius of Gyration]
+
+G --> K[SASA]
+
+G --> L[DSSP]
+
+H --> M[Scientific Reports]
+
+I --> M
+
+J --> M
+
+K --> M
+
+L --> M
 ```
 
 ---
 
-## 📁 Repository Structure
+# 📊 Project Statistics
 
-| Directory                | Description                                   |
-| ------------------------ | --------------------------------------------- |
-| `Simulation/inputs/`     | GROMACS parameter and simulation input files  |
-| `Simulation/files/`      | Raw simulation outputs and intermediate files |
-| `Simulation/dataset/`    | XVG extraction and dataset generation scripts |
-| `Simulation/graphs/`     | Plot generation scripts and figure outputs    |
-| `Simulation/info/`       | Statistical summaries and report assets       |
-| `Simulation/MDAnalysis/` | Advanced trajectory analysis workflows        |
-| `Simulation/compressed/` | Archived generated outputs                    |
-| `Datasets/`              | Lightweight CSV and XLSX datasets             |
-
----
-
-## 📈 Analysis Performed
-
-The repository includes automated generation and analysis of:
-
-### 🧭 Structural Metrics
-
-* Root Mean Square Deviation (RMSD)
-* Root Mean Square Fluctuation (RMSF)
-* Radius of Gyration (Rg)
-* Solvent Accessible Surface Area (SASA)
-
-### 🌡️ Thermodynamic Properties
-
-* Temperature
-* Pressure
-* Total Energy
-* Energy Stability Analysis
-
-### 🧬 Structural Characterization
-
-* DSSP Secondary Structure Analysis
-* Conformational Stability Assessment
-* Protein Compactness Evaluation
-
-### 📊 Data Products
-
-* XVG files
-* CSV exports
-* Excel spreadsheets
-* Summary statistics
-* Publication-ready figures
+| Metric                       | Value                         |
+| ---------------------------- | ----------------------------- |
+| Protein                      | Myoglobin (1MBN)              |
+| Simulation Engine            | GROMACS                       |
+| Analysis Framework           | MDAnalysis                    |
+| Programming Language         | Python                        |
+| Structural Metrics           | RMSD, RMSF, Rg, SASA          |
+| Thermodynamic Metrics        | Temperature, Pressure, Energy |
+| Secondary Structure Analysis | DSSP                          |
+| Dataset Formats              | XVG, CSV, XLSX                |
+| Visual Outputs               | Publication-Ready Figures     |
+| Reproducibility              | Fully Scripted Workflow       |
 
 ---
 
-## 🖼️ Figure Gallery
+# 📁 Repository Structure
+
+```text
+Myoglobin-1MBN-Simulation
+│
+├── Simulation
+│   ├── inputs
+│   ├── files
+│   ├── dataset
+│   ├── graphs
+│   ├── info
+│   ├── MDAnalysis
+│   └── compressed
+│
+├── Datasets
+│
+└── README.md
+```
+
+---
+
+# 🖼️ Analysis Gallery
 
 <table>
-  <tr>
-    <td align="center">
-      <img src="Simulation/graphs/plots/rmsd.png" width="100%">
-      <br><sub>RMSD Analysis</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/graphs/plots/rmsf.png" width="100%">
-      <br><sub>RMSF Analysis</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/graphs/plots/gyrate.png" width="100%">
-      <br><sub>Radius of Gyration</sub>
-    </td>
-  </tr>
+<tr>
+<td align="center">
+<img src="Simulation/graphs/plots/rmsd.png" width="100%">
+<br><sub><b>RMSD</b></sub>
+</td>
 
-  <tr>
-    <td align="center">
-      <img src="Simulation/graphs/plots/sasa.png" width="100%">
-      <br><sub>SASA</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/graphs/plots/temperature.png" width="100%">
-      <br><sub>Temperature</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/graphs/plots/pressure.png" width="100%">
-      <br><sub>Pressure</sub>
-    </td>
-  </tr>
+<td align="center">
+<img src="Simulation/graphs/plots/rmsf.png" width="100%">
+<br><sub><b>RMSF</b></sub>
+</td>
 
-  <tr>
-    <td align="center">
-      <img src="Simulation/graphs/plots/total_energy.png" width="100%">
-      <br><sub>Total Energy</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/graphs/plots/DSSP.png" width="100%">
-      <br><sub>DSSP Analysis</sub>
-    </td>
-    <td align="center">
-      <img src="Simulation/MDAnalysis/Output/Radius_of_Gyration.png" width="100%">
-      <br><sub>MDAnalysis Validation</sub>
-    </td>
-  </tr>
+<td align="center">
+<img src="Simulation/graphs/plots/gyrate.png" width="100%">
+<br><sub><b>Radius of Gyration</b></sub>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img src="Simulation/graphs/plots/sasa.png" width="100%">
+<br><sub><b>SASA</b></sub>
+</td>
+
+<td align="center">
+<img src="Simulation/graphs/plots/temperature.png" width="100%">
+<br><sub><b>Temperature</b></sub>
+</td>
+
+<td align="center">
+<img src="Simulation/graphs/plots/pressure.png" width="100%">
+<br><sub><b>Pressure</b></sub>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<img src="Simulation/graphs/plots/total_energy.png" width="100%">
+<br><sub><b>Total Energy</b></sub>
+</td>
+
+<td align="center">
+<img src="Simulation/graphs/plots/DSSP.png" width="100%">
+<br><sub><b>DSSP</b></sub>
+</td>
+
+<td align="center">
+<img src="Simulation/MDAnalysis/Output/Radius_of_Gyration.png" width="100%">
+<br><sub><b>MDAnalysis Validation</b></sub>
+</td>
+</tr>
 </table>
 
 ---
 
-## 🛠️ Software Stack
+# 🛠️ Technology Stack
 
 ### Molecular Simulation
 
 * GROMACS
 
-### Data Processing
+### Scientific Computing
 
 * Python
 * NumPy
@@ -203,12 +252,12 @@ The repository includes automated generation and analysis of:
 
 * MDAnalysis
 
-### Visualization
+### Data Visualization
 
 * Matplotlib
 * Seaborn
 
-### Reporting
+### Reporting & Export
 
 * OpenPyXL
 * ReportLab
@@ -220,35 +269,38 @@ The repository includes automated generation and analysis of:
 
 ---
 
-## 🚀 Reproducibility
+# 🚀 Reproducing the Analysis
 
-Install required Python packages:
+Install dependencies:
 
 ```bash
 pip install numpy pandas matplotlib seaborn MDAnalysis openpyxl reportlab
 ```
 
-Run the complete analysis workflow:
+Generate processed datasets:
 
 ```bash
 bash Simulation/dataset/xvg-generate.sh
-
 python Simulation/dataset/xvgtoexcel.py
-
-python Simulation/graphs/plotgenerator.py
-
-python Simulation/info/datainfo.py
 ```
 
-Verify repository status:
+Generate plots:
 
 ```bash
-git status --short
+python Simulation/graphs/plotgenerator.py
+```
+
+Generate summary reports:
+
+```bash
+python Simulation/info/datainfo.py
 ```
 
 ---
 
-## ☁️ GitHub & Kaggle Data Strategy
+# ☁️ Data Availability
+
+To keep the GitHub repository lightweight, large simulation artifacts are hosted separately.
 
 ### GitHub Repository
 
@@ -256,73 +308,60 @@ Contains:
 
 * Source code
 * Analysis scripts
+* Simulation inputs
 * Documentation
-* Simulation parameters
 * Processed datasets
-* Scientific figures
+* Generated figures
 
 ### Kaggle Dataset
 
-Stores:
+Contains:
 
-* Large `.xtc` trajectories
-* `.trr` files
+* Production trajectories (`.xtc`)
+* Raw trajectory files (`.trr`)
 * Checkpoints
 * Intermediate simulation outputs
-* Heavy binary artifacts
+* Large binary artifacts
 
-This approach keeps the repository lightweight while preserving complete reproducibility.
-
----
-
-## 🎯 Learning & Research Objectives
-
-This project aims to:
-
-* Understand protein dynamics through MD simulation
-* Develop reproducible scientific workflows
-* Apply computational biophysics methodologies
-* Perform trajectory-based structural analysis
-* Generate publication-quality scientific visualizations
-* Practice large-scale scientific data management
+This separation enables full reproducibility while remaining compatible with GitHub storage limitations.
 
 ---
 
-## 📌 Notes
+# 🎯 Applications
 
-* Large trajectory files are intentionally excluded from GitHub.
-* GitHub hosts lightweight datasets and reproducible code.
-* Kaggle hosts complete downloadable simulation outputs.
-* All figures included in this repository are generated directly from simulation data.
-* The project structure is designed for long-term maintainability and reproducibility.
+This workflow can serve as a foundation for:
+
+* Molecular Dynamics education
+* Computational biophysics projects
+* Protein stability investigations
+* Trajectory analysis workflows
+* Scientific computing portfolios
+* Reproducible research demonstrations
 
 ---
 
-## 📚 Citation
+# 📚 Citation
 
-If you use this repository in academic work, please cite:
+If you use this repository or associated datasets in academic work, please cite:
 
-* Myoglobin structure source (**PDB: 1MBN**)
+* Myoglobin structure source (PDB ID: 1MBN)
 * Associated simulation datasets
 * Repository release version
 
-A future DOI-backed release and `CITATION.cff` file are recommended for formal scholarly citation.
+Future versions may include DOI-backed releases and a `CITATION.cff` file for formal scholarly citation.
 
 ---
 
-## 📜 License
+# 📜 License
 
-This project is licensed under the **MIT License**.
+Licensed under the MIT License.
 
-Copyright (c) 2026
+Copyright © 2026
 
 **Krish Singh**
 
 ---
 
 <p align="center">
-  🧬 Computational Biophysics • Molecular Dynamics • Scientific Computing
-</p>
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Reproducible+Molecular+Dynamics+Simulation;Myoglobin+(PDB+1MBN)+Analysis;GROMACS+%7C+MDAnalysis+%7C+Scientific+Computing;Publication-Ready+Figures+and+Datasets" />
+  🧬 Molecular Dynamics • Computational Biophysics • Scientific Computing
 </p>
