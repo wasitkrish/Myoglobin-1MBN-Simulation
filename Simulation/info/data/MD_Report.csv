@@ -1,0 +1,29 @@
+Property,Value
+Protein Name,Myoglobin
+Protein ID,1MBN
+Number of Chains,1
+Number of Amino Acids,153
+Net Charge,2
+Total Atoms,31933
+RMSD Avg,0.1709 nm
+RMSD Std,0.0272 nm
+RMSF Avg,0.0705 nm
+RMSF Std,0.0237 nm
+Radius of Gyration Avg,1.5447 nm
+Radius of Gyration Std,0.0071 nm
+Hydrogen Bonds Avg,122.0987 count
+Hydrogen Bonds Std,5.5044 count
+Pressure Avg,-17.4503 bar
+Pressure Std,167.9087 bar
+Temperature Avg,294.2119 K
+Temperature Std,41.6338 K
+Potential Energy Avg,-487078.0293 kJ/mol
+Potential Energy Std,38132.2716 kJ/mol
+Kinetic Energy Avg,81178.0156 kJ/mol
+Kinetic Energy Std,504.0031 kJ/mol
+Total Energy Avg,-393937.7343 kJ/mol
+Total Energy Std,965.4104 kJ/mol
+SASA Avg,85.7631 nm^2
+SASA Std,1.8155 nm^2
+Density Avg,1021.1249 kg/m^3
+Density Std,5.5905 kg/m^3

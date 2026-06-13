@@ -27,6 +27,29 @@ Python Archive/
 # Backup temp files
 #*#
 
+# Release-prep artifacts and generated metadata
+Simulation/README.md
+Simulation/REPRODUCIBILITY.md
+Simulation/RELEASE_PREP_REPORT.md
+Simulation/environment.yml
+Simulation/requirements.txt
+Simulation/dataset/dataset-metadata.json
+Simulation/scripts/release_audit.sh
+Simulation/release_audit/
+
+# Exported dataset files for Kaggle or local analysis
+Datasets/*.csv
+Datasets/*.xlsx
+
 # OS junk
 .DS_Store
 Thumbs.db
+
+# allow python archive folder
+!Python Archive/
+
+# but still ignore unwanted files inside
+Python Archive/__pycache__/
+Python Archive/*.pyc
+Python Archive/*.pyo
+Python Archive/*.pyd

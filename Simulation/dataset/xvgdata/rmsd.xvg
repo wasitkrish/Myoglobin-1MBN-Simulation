@@ -1,0 +1,19 @@
+# This file was created Sat Feb 21 02:55:54 2026
+# Created by:
+#                       :-) GROMACS - gmx rms, 2026.0 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/dataset
+# Command line:
+#   gmx rms -s '/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/files/md.tpr' -f '/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/files/md.xtc' -o '/home/krish/Desktop/Material-Informatics/MD Simulation/Myoglobin 1MBN/dataset/xvgdata/rmsd.xvg' -dt 10 -tu ns
+# gmx rms is part of G R O M A C S:
+#
+# GROningen Mixture of Alchemy and Childrens' Stories
+#
+@    title "RMSD"
+@    xaxis  label "Time (ns)"
+@    yaxis  label "RMSD (nm)"
+@TYPE xy
+@ subtitle "Backbone after lsq fit to Backbone"
+   0.0000000    0.0000004
